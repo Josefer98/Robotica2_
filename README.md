@@ -56,7 +56,9 @@ copiar el codigo de suscriptor en un entorno en la Raspberry Pi 4
 -Pin positivo del LED → GPIO 17 (pin físico 11)
 
 -Pin negativo del LED → Resistencia de 220Ω → GND
-
+  <p>
+  <img src="files_/conecciones.png" alt="rassberry" width="700" height="500"/>
+  </p>
 ## 🚀 Cómo ejecutar
 ### 🍓En la Raspberry Pi 4 (Suscriptor)
 Guarda el siguiente código como led_subscribe.py y ejecútalo:
@@ -87,13 +89,8 @@ Mensaje a enviar: salir → Cierra el programa
 -El puerto MQTT por defecto (1883) debe estar abierto y accesible en la Raspberry.
 
 -Si usas otro tópico distinto a casa/led, recuerda modificarlo en ambos códigos.
-
-  <p>
-  <img src="files/pinesrassberry.jpg" alt="rassberry" width="700" height="500"/>
-  </p>
-  
-
   
 # 🎥Demostracion de funcionamineto
 
-![Brazo robot](files/demostracion.gif)
+![Public](files_/public.gif)
+![Suscrib](files_/suscrib.gif)
