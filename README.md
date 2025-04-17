@@ -25,6 +25,10 @@ El objetivo es ilustrar cómo funcionan los roles de **publicador** (laptop) y *
 El esquema muestra cómo la laptop envía comandos al servidor MQTT (Mosquitto), que luego los redirige a la Raspberry Pi para encender o apagar un LED según el mensaje recibido.
 Esta arquitectura sigue el modelo publicador-suscriptor del protocolo MQTT.
 
+<p>
+  <img src="files_/esquema.png" alt="conecciones" width="700" height="500"/>
+</p>
+
 ## 🚀Para armado y utilizacion de codigo
 ### Clonar el repositorio :  
 ```bash
