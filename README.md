@@ -30,49 +30,69 @@ Esta arquitectura sigue el modelo publicador-suscriptor del protocolo MQTT.
 ```bash
 git clone https://github.com/Josefer98/Robotica2_.git
 ```
-git clone https://github.com/Josefer98/Robotica2_.git
-### Copiar el codigo en un entorno adecuado para python
-Para este proyecto se utilzo el editor MU
-![Editor MU de Rasbien](files/mu.jpg)
-### Instalar dependencias
-en la teminal ejecuta:
+### 🛠️ Dependencias y libreiras necesarias 
+## 💻 Laptop
+intalar paho-mqtt
+```bash
+pip install paho-mqtt
+```
 
-![comandos](files/comandos.jpg)
-### Conectar camara y probar en rasberry
-conecta la camara mediante el usb
-prueba con este comando:
+abrir un entorno que ejecute python y copiar el codigo de publicador 
 
-![comandos](files/pruebacam.jpg)
-### Armar brazo robótico
-  -usa el pin 17 para el primer servomotor que controlara el movimiento de derecha a izquierda
-  
-  -usa el pin 18 para el sefundo servomotor que controlara el movimiento de arriba a abajo
-  
-  -usa el pin 27 para el tercer servomotor que controlara que la garra abra o cierre
-  
-  -coneccion a tierra importante 
+## 🍓 Raspberry Pi 4 (Suscriptor y Broker)
+libreiras 
+```bash
+pip install paho-mqtt RPi.GPIO
+```
+broker
+```bash
+sudo apt update
+sudo apt install mosquitto mosquitto-clients
+sudo systemctl enable mosquitto
+sudo systemctl start mosquitto
+```
+copiar el codigo de suscriptor en un entorno en la Raspberry Pi 4
+### 🔌 Conexión del LED (GPIO)
+-Pin positivo del LED → GPIO 17 (pin físico 11)
+
+-Pin negativo del LED → Resistencia de 220Ω → GND
+
+## 🚀 Cómo ejecutar
+### 🍓En la Raspberry Pi 4 (Suscriptor)
+Guarda el siguiente código como led_subscribe.py y ejecútalo:
+```bash
+python3 led_subscribe.py
+```
+Esto suscribe a la Raspberry al tópico casa/led y controla el LED.
+### 💻En la Laptop (Publicador)
+Asegúrate de que la IP del broker en led_publish.py sea la IP local de tu Raspberry Pi:
+```bash
+broker = "192.168.84.231"
+```
+Ejecuta el código:
+```bash
+python3 led_publish.py
+```
+Escribe comandos:
+```bash
+Mensaje a enviar: on    → Enciende el LED  
+Mensaje a enviar: off   → Apaga el LED  
+Mensaje a enviar: salir → Cierra el programa
+```
+
+## 📌 Notas importantes
+
+-Ambos dispositivos deben estar conectados a la misma red Wi-Fi.
+
+-El puerto MQTT por defecto (1883) debe estar abierto y accesible en la Raspberry.
+
+-Si usas otro tópico distinto a casa/led, recuerda modificarlo en ambos códigos.
 
   <p>
   <img src="files/pinesrassberry.jpg" alt="rassberry" width="700" height="500"/>
   </p>
   
-  -conecciones:
-  
-  <p>
-  <img src="files/circuito.jpeg" alt="conecciones" width="500" />
-  </p>
-  
-  -brazo armado:
 
-  <p>
-  <img src="files/brazo.jpeg" alt="brazo" width="500" height="500"/>
-  </p>
-  
-  -opcional el uso de de una fuente para dar energia solo a los servomotores:
-
-  <p>
-  <img src="files/fuente.jpeg" alt="fuente" width="500" height="500"/>
-  </p>
   
 # 🎥Demostracion de funcionamineto
 
