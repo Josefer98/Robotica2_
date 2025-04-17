@@ -36,7 +36,7 @@ git clone https://github.com/Josefer98/Robotica2_.git
 ```
 ### 🛠️ Dependencias y libreiras necesarias 
 ## 💻 Laptop
-intalar paho-mqtt
+instalar paho-mqtt
 ```bash
 pip install paho-mqtt
 ```
@@ -44,7 +44,7 @@ pip install paho-mqtt
 abrir un entorno que ejecute python y copiar el codigo de publicador 
 
 ## 🍓 Raspberry Pi 4 (Suscriptor y Broker)
-libreiras 
+librerias 
 ```bash
 pip install paho-mqtt RPi.GPIO
 ```
@@ -56,7 +56,7 @@ sudo systemctl enable mosquitto
 sudo systemctl start mosquitto
 ```
 copiar el codigo de suscriptor en un entorno en la Raspberry Pi 4
-### 🔌 Conexión del LED (GPIO)
+## 🔌 Conexión del LED (GPIO)
 -Pin positivo del LED → GPIO 17 (pin físico 11)
 
 -Pin negativo del LED → Resistencia de 220Ω → GND
